@@ -30,10 +30,9 @@ sap.ui.define([
 
       if (oAccessToken) {
         $.get({
-          url: $.sap.formatMessage('{0}Users/{1}/accessTokens/{2}', [
+          url: $.sap.formatMessage('{0}Users/{1}', [
             this.getMetadata().getManifestEntry('sap.app').dataSources['api'].uri,
             oAccessToken.userId,
-            oAccessToken.id,
           ]),
           contentType: 'application/json',
           headers: {'Authorization': oAccessToken.id},

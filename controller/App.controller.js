@@ -11,7 +11,7 @@ sap.ui.define([
       this.getView().setModel(new JSONModel());
     },
 
-    onPress: function() {
+    onPressLogin: function() {
       var oView = this.getView();
       var oModel = oView.getModel();
       var oResourceBundle = oView.getModel('i18n').getResourceBundle();
@@ -24,13 +24,35 @@ sap.ui.define([
         })
       .done(function(data, status, xhr) {
         Cookies.set('AccessToken', data);
-        oView.getModel('AccessToken').setData(data);
-        
         MessageToast.show(oResourceBundle.getText('authSuccess'));
       })
       .fail(function(data) {
+        Cookies.remove('AccessToken');
         MessageToast.show(oResourceBundle.getText('authError'));
       });
+    },
+
+    onPressLogout: function() {
+      var oView = this.getView();
+      var oModel = oView.getModel();
+      var oResourceBundle = oView.getModel('i18n').getResourceBundle();
+      var oAccessToken = Cookies.getJSON('AccessToken');
+
+      if (oAccessToken) {
+        $.post(
+          {
+            url: $.sap.formatMessage('{0}Users/logout', this.getOwnerComponent().getManifestEntry('/sap.app/dataSources/api/uri')),
+            contentType: 'application/json',
+            headers: {'Authorization': oAccessToken.id},
+          })
+        .done(function(data, status, xhr) {
+          MessageToast.show(oResourceBundle.getText('authLogoutSuccess'));
+        })
+        .fail(function(data) {
+          MessageToast.show(oResourceBundle.getText('authLogoutSuccess'));
+        });
+        Cookies.remove('AccessToken');
+      }
     },
   });
 });
