@@ -1,31 +1,11 @@
 <mvc:View
 	controllerName="tms.basic.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form"
 	displayBlock="true"
 	xmlns="sap.m">
 	<App>
 		<pages>
-			<Page
-				id="page"
-				title="{i18n>title}">
-				<content>
-					<VBox class="sapUiContentPadding" alignItems="Center" justifyContent="Center" alignContent="Center" fitContainer="true">
-						<f:SimpleForm id="authForm"
-							editable="true"
-							layout="ResponsiveGridLayout"
-							title="{i18n>authFormTitle}"
-							class="editableForm">
-							<f:content>
-								<Input id="username" placeholder="{i18n>authFormUsername}" value="{/username}"></Input>
-								<Input id="password" placeholder="{i18n>authFormPassword}" type="Password" value="{/password}"></Input>
-								<Button text="{i18n>authFormButtonLogin}" type="Emphasized" press="onPressLogin"></Button>
-								<Button text="{i18n>authFormButtonLogout}" press="onPressLogout"></Button>
-							</f:content>
-						</f:SimpleForm>
-					</VBox>
-				</content>
-			</Page>
+			<mvc:XMLView viewName="tms.basic.view.Login"/>
 		</pages>
 	</App>
 </mvc:View>
