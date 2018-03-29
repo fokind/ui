@@ -1,6 +1,7 @@
 <mvc:View
-	controllerName="sap.ui.demo.basicTemplate.controller.App"
+	controllerName="tms.basic.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
 	displayBlock="true"
 	xmlns="sap.m">
 	<App>
@@ -8,7 +9,21 @@
 			<Page
 				id="page"
 				title="{i18n>title}">
-				<content></content>
+				<content>
+					<VBox class="sapUiContentPadding" alignItems="Center" justifyContent="Center" alignContent="Center" fitContainer="true">
+						<f:SimpleForm id="authForm"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="{i18n>authFormTitle}"
+							class="editableForm">
+							<f:content>
+								<Input id="username" placeholder="{i18n>authFormUsername}" value="{/username}"></Input>
+								<Input id="password" placeholder="{i18n>authFormPassword}" type="Password" value="{/password}"></Input>
+								<Button text="{i18n>authFormButton}" type="Emphasized" press="onPress"></Button>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
 			</Page>
 		</pages>
 	</App>

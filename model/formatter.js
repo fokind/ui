@@ -1,6 +1,5 @@
-sap.ui.define([], function () {
-	"use strict";
-	return {
+'use strict';
 
-	};
+sap.ui.define([], function() {
+  return {};
 });
