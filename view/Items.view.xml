@@ -1,0 +1,14 @@
+<mvc:View
+	controllerName="tms.basic.controller.Items"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	displayBlock="true"
+	xmlns="sap.m">
+  <Page id="items" title="{i18n>title}">
+    <content>
+      <List headerText="{i18n>itemsHeader}" items="{path:'Items>/'}" >
+      <StandardListItem title="{Items>name}"/>
+    </List>
+    </content>
+  </Page>
+</mvc:View>

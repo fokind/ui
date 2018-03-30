@@ -1,42 +1,46 @@
 <mvc:View
   xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.uxap"
+  xmlns:uxap="sap.uxap"
   xmlns:layout="sap.ui.layout"
-  xmlns:m="sap.m"
+  xmlns="sap.m"
   xmlns:customdata="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
   controllerName="tms.basic.controller.Home"
   height="100%">
-  <ObjectPageLayout id="home">
-    <sections>
-      <ObjectPageSection>
-        <subSections>
-          <ObjectPageSubSection title="Основное">
-            <blocks>
-              <layout:BlockLayout>
-                <layout:content>
-                  <layout:BlockLayoutRow>
+  <Page id="home" title="{i18n>title}">
+    <content>
+      <uxap:ObjectPageLayout>
+        <uxap:sections>
+          <uxap:ObjectPageSection>
+            <uxap:subSections>
+              <uxap:ObjectPageSubSection title="Основное">
+                <uxap:blocks>
+                  <layout:BlockLayout>
                     <layout:content>
-                      <layout:BlockLayoutCell>
+                      <layout:BlockLayoutRow>
                         <layout:content>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout" header="Логин" press="onPress" customdata:target="login"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
-                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <layout:BlockLayoutCell>
+                            <layout:content>
+                              <GenericTile class="sapUiTinyMargin tileLayout" header="{i18n>homeLogin}" press="onPress" customdata:target="login"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout" header="{i18n>homeItems}" press="onPress" customdata:target="items"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                              <GenericTile class="sapUiTinyMargin tileLayout"/>
+                            </layout:content>
+                          </layout:BlockLayoutCell>
                         </layout:content>
-                      </layout:BlockLayoutCell>
+                      </layout:BlockLayoutRow>
                     </layout:content>
-                  </layout:BlockLayoutRow>
-                </layout:content>
-              </layout:BlockLayout>
-            </blocks>
-          </ObjectPageSubSection>
-        </subSections>
-      </ObjectPageSection>
-    </sections>
-  </ObjectPageLayout>
+                  </layout:BlockLayout>
+                </uxap:blocks>
+              </uxap:ObjectPageSubSection>
+            </uxap:subSections>
+          </uxap:ObjectPageSection>
+        </uxap:sections>
+      </uxap:ObjectPageLayout>
+    </content>
+  </Page>
 </mvc:View>

@@ -21,14 +21,6 @@
 
 	"sap.ui": {
 		"technology": "UI5",
-		"icons": {
-			"icon": "",
-			"favIcon": "",
-			"phone": "",
-			"phone@2": "",
-			"tablet": "",
-			"tablet@2": ""
-		},
 		"deviceTypes": {
 			"desktop": true,
 			"tablet": true,
@@ -62,13 +54,9 @@
 					"bundleName": "tms.basic.i18n.i18n"
 				}
 			},
-			"AccessToken": {
+			"Items": {
 				"type": "sap.ui.model.json.JSONModel"
 			}
-		},
-		"config": {
-			"hostname": "localhost",
-			"port": 3000
 		},
 		"resources": {
 			"css": [{
@@ -94,6 +82,11 @@
 					"pattern": "login",
 					"name": "login",
 					"target": "login"
+				},
+				{
+					"pattern": "items",
+					"name": "items",
+					"target": "items"
 				}
 			],
 			"targets": {
@@ -104,6 +97,10 @@
 				"login": {
 					"viewId": "login",
 					"viewName": "Login"
+				},
+				"items": {
+					"viewId": "items",
+					"viewName": "Items"
 				}
 			}
 		}

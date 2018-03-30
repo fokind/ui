@@ -4,9 +4,7 @@
 	xmlns:f="sap.ui.layout.form"
 	displayBlock="true"
 	xmlns="sap.m">
-  <Page
-    id="login"
-    title="{i18n>title}">
+  <Page id="login" title="{i18n>title}">
     <content>
       <VBox class="sapUiContentPadding" alignItems="Center" justifyContent="Center" alignContent="Center" fitContainer="true">
         <f:SimpleForm id="authForm"
