@@ -34,7 +34,8 @@ sap.ui.define([
       if (oAccessToken) {
         $.get({
           url: $.sap.formatMessage('{0}Users/{1}', [
-            this.getMetadata().getManifestEntry('sap.app').dataSources['api'].uri,
+            this.getMetadata()
+              .getManifestEntry('sap.app').dataSources['api'].uri,
             oAccessToken.userId,
           ]),
           contentType: 'application/json',
