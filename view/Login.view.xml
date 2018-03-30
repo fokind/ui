@@ -5,7 +5,7 @@
 	displayBlock="true"
 	xmlns="sap.m">
   <Page
-    id="page"
+    id="login"
     title="{i18n>title}">
     <content>
       <VBox class="sapUiContentPadding" alignItems="Center" justifyContent="Center" alignContent="Center" fitContainer="true">

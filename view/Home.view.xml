@@ -1,0 +1,42 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.uxap"
+  xmlns:layout="sap.ui.layout"
+  xmlns:m="sap.m"
+  xmlns:customdata="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+  controllerName="tms.basic.controller.Home"
+  height="100%">
+  <ObjectPageLayout id="home">
+    <sections>
+      <ObjectPageSection>
+        <subSections>
+          <ObjectPageSubSection title="Основное">
+            <blocks>
+              <layout:BlockLayout>
+                <layout:content>
+                  <layout:BlockLayoutRow>
+                    <layout:content>
+                      <layout:BlockLayoutCell>
+                        <layout:content>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout" header="Логин" press="onPress" customdata:target="login"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                          <m:GenericTile class="sapUiTinyMargin tileLayout"/>
+                        </layout:content>
+                      </layout:BlockLayoutCell>
+                    </layout:content>
+                  </layout:BlockLayoutRow>
+                </layout:content>
+              </layout:BlockLayout>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+    </sections>
+  </ObjectPageLayout>
+</mvc:View>

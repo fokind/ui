@@ -20,10 +20,13 @@ sap.ui.define([
     init: function() {
 			// call the base component's init function
       UIComponent.prototype.init.apply(this, arguments);
+      var oRouter = this.getRouter();
+      oRouter.initialize();
+
       var oResourceBundle = this.getModel('i18n').getResourceBundle();
 
       // set the device model
-      this.setModel(models.createDeviceModel(), 'device');
+      // this.setModel(models.createDeviceModel(), 'device');
 
       // проверка авторизации
       var oAccessToken = Cookies.getJSON('AccessToken');
@@ -42,9 +45,9 @@ sap.ui.define([
         })
         .fail(function(data) {
           Cookies.remove('AccessToken');
-          MessageToast.show(oResourceBundle.getText('authError'));
+          oRouter.navTo('login');
         });
-      } else MessageToast.show(oResourceBundle.getText('authRequired'));
+      } else oRouter.navTo('login');
     },
   });
 });

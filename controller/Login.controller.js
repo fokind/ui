@@ -1,14 +1,13 @@
-/* global sap $ Cookies */
+/* global sap $ Cookies window */
 'use strict';
 
 sap.ui.define([
   'sap/ui/core/mvc/Controller',
-  'sap/ui/model/json/JSONModel',
   'sap/m/MessageToast',
-], function(Controller, JSONModel, MessageToast) {
+], function(Controller, MessageToast) {
   return Controller.extend('tms.basic.controller.Login', {
     onInit: function() {
-      this.getView().setModel(new JSONModel());
+      this.getView().setModel(new sap.ui.model.json.JSONModel());
     },
 
     onPressLogin: function() {
@@ -25,6 +24,7 @@ sap.ui.define([
       .done(function(data, status, xhr) {
         Cookies.set('AccessToken', data);
         MessageToast.show(oResourceBundle.getText('authSuccess'));
+        sap.ui.core.UIComponent.getRouterFor(oView).navTo('home');
       })
       .fail(function(data) {
         Cookies.remove('AccessToken');

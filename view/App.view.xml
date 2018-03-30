@@ -3,9 +3,5 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
 	xmlns="sap.m">
-	<App>
-		<pages>
-			<mvc:XMLView viewName="tms.basic.view.Login"/>
-		</pages>
-	</App>
+	<App class="myAppDemoWT" id="app"/>
 </mvc:View>
