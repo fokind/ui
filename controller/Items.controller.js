@@ -26,10 +26,10 @@ sap.ui.define([
       var o = oBindingContext.oModel.oData[oBindingContext.getPath().substr(1)];
       sap.m.MessageToast.show(o.id);
       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      
-      /*oRouter.navTo('item', {
-        invoicePath: oItem.getBindingContext('Items').getPath().substr(1),
-      });*/
+
+      oRouter.navTo('item', {
+        itemId: o.id,
+      });
     },
 
   });

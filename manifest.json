@@ -56,6 +56,9 @@
 			},
 			"Items": {
 				"type": "sap.ui.model.json.JSONModel"
+			},
+			"Item": {
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"resources": {
@@ -87,6 +90,11 @@
 					"pattern": "items",
 					"name": "items",
 					"target": "items"
+				},
+				{
+					"pattern": "items/{itemId}",
+					"name": "item",
+					"target": "item"
 				}
 			],
 			"targets": {
@@ -101,6 +109,10 @@
 				"items": {
 					"viewId": "items",
 					"viewName": "Items"
+				},
+				"item": {
+					"viewId": "item",
+					"viewName": "Item"
 				}
 			}
 		}

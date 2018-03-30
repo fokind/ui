@@ -4,7 +4,7 @@
 	xmlns:f="sap.ui.layout.form"
 	displayBlock="true"
 	xmlns="sap.m">
-  <Page id="items" title="{i18n>title}">
+  <Page id="items" title="{i18n>title}" showNavButton="true">
     <content>
       <List headerText="{i18n>itemsHeader}" items="{path:'Items>/'}" >
         <StandardListItem title="{Items>name}" press="onPress" type="Navigation"/>

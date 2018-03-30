@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="tms.basic.controller.Item"
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns:uxap="sap.uxap"
+	xmlns:f="sap.ui.layout.form"
+  xmlns:s="sap.m.semantic"
+	displayBlock="true"
+	xmlns="sap.m">
+  <s:DetailPage id="item" title="{i18n>title}" showNavButton="true">
+    <s:content>
+      <uxap:ObjectPageLayout>
+        <uxap:headerTitle>
+          <uxap:ObjectPageHeader objectTitle="{Item>/name}"/>
+        </uxap:headerTitle>
+      </uxap:ObjectPageLayout>
+    </s:content>
+  </s:DetailPage>
+</mvc:View>
