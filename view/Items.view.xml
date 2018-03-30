@@ -7,8 +7,8 @@
   <Page id="items" title="{i18n>title}">
     <content>
       <List headerText="{i18n>itemsHeader}" items="{path:'Items>/'}" >
-      <StandardListItem title="{Items>name}"/>
-    </List>
+        <StandardListItem title="{Items>name}" press="onPress" type="Navigation"/>
+      </List>
     </content>
   </Page>
 </mvc:View>

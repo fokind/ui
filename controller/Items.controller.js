@@ -20,5 +20,17 @@ sap.ui.define([
         {'Authorization': Cookies.getJSON('AccessToken').id}
       );
     },
+
+    onPress: function(oEvent) {
+      var oBindingContext = oEvent.getSource().getBindingContext('Items');
+      var o = oBindingContext.oModel.oData[oBindingContext.getPath().substr(1)];
+      sap.m.MessageToast.show(o.id);
+      var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      
+      /*oRouter.navTo('item', {
+        invoicePath: oItem.getBindingContext('Items').getPath().substr(1),
+      });*/
+    },
+
   });
 });
