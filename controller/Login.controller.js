@@ -17,8 +17,15 @@ sap.ui.define([
 
       $.post(
         {
-          url: $.sap.formatMessage('{0}Users/login', this.getOwnerComponent().getManifestEntry('/sap.app/dataSources/api/uri')),
-          data: $.sap.formatMessage('\'{\'"username":"{0}","password":"{1}"\'}\'', [oModel.getProperty('/username'), oModel.getProperty('/password')]),
+          url: $.sap.formatMessage(
+            '{0}Users/login',
+            this.getOwnerComponent()
+              .getManifestEntry('/sap.app/dataSources/api/uri')
+          ),
+          data: $.sap.formatMessage(
+            '\'{\'"username":"{0}","password":"{1}"\'}\'',
+            [oModel.getProperty('/username'), oModel.getProperty('/password')]
+          ),
           contentType: 'application/json',
         })
       .done(function(data, status, xhr) {
@@ -41,17 +48,16 @@ sap.ui.define([
       if (oAccessToken) {
         $.post(
           {
-            url: $.sap.formatMessage('{0}Users/logout', this.getOwnerComponent().getManifestEntry('/sap.app/dataSources/api/uri')),
+            url: $.sap.formatMessage(
+              '{0}Users/logout',
+              this.getOwnerComponent()
+                .getManifestEntry('/sap.app/dataSources/api/uri')
+            ),
             contentType: 'application/json',
             headers: {'Authorization': oAccessToken.id},
-          })
-        .done(function(data, status, xhr) {
-          MessageToast.show(oResourceBundle.getText('authLogoutSuccess'));
-        })
-        .fail(function(data) {
-          MessageToast.show(oResourceBundle.getText('authLogoutSuccess'));
-        });
+          });
         Cookies.remove('AccessToken');
+        MessageToast.show(oResourceBundle.getText('authLogoutSuccess'));
       }
     },
   });
